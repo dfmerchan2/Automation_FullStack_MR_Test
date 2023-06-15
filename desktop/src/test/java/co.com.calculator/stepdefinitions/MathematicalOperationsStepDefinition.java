@@ -3,9 +3,10 @@ package co.com.calculator.stepdefinitions;
 import co.com.calculator.exceptions.ExpectedResultExceptions;
 import co.com.calculator.tasks.MakeMathOperation;
 import co.com.calculator.utils.DriverManager;
-import io.cucumber.java.es.Cuando;
-import io.cucumber.java.es.Dado;
-import io.cucumber.java.es.Entonces;
+import io.cucumber.java.en.Given;
+
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 
 import static co.com.calculator.userinterface.CalculatorPage.BTN_RESULT;
@@ -17,22 +18,22 @@ import static org.hamcrest.Matchers.equalTo;
 
 public class MathematicalOperationsStepDefinition {
 
-    @Dado("que {string} abre la aplicación de la calculadora")
-    public void openTheCalculatorApp(String actor) {
+    @Given("that {string} opens the calculator application")
+    public void thatOpensTheCalculatorApplication(String actor) {
         theActorCalled(actor).can(
                 BrowseTheWeb.with(DriverManager.openDesktopApplication())
         );
     }
 
-    @Cuando("realiza la operación de {string} con los valores {string} y {string}")
-    public void performsTheMathematicalOperationWithTheValues(String operator, String valueOne, String valueTwo) {
+    @When("he performs the {string} operation with the values {string} and {string}")
+    public void hePerformsTheOperationWithTheValuesAnd(String operator, String valueOne, String valueTwo) {
         theActorInTheSpotlight().attemptsTo(
                 MakeMathOperation.onTheCalculator(operator, valueOne, valueTwo)
         );
     }
 
-    @Entonces("debería de observar el resultado igual a {string}")
-    public void ObserveTheEqualsResult(String result) {
+    @Then("he should observe the result equal to {string}")
+    public void heShouldObserveTheResultEqualTo(String result) {
 
         theActorInTheSpotlight().should(
                 seeThat("Validar el mensaje de error al autenticarse con credenciales invalidas",

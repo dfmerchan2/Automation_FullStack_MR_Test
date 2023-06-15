@@ -23,7 +23,7 @@ public class MakeMathOperation implements Task {
 
 
     @Override
-    @Step("{0} realiza el proceso de #operator con los valores #valueOne y #valueTwo")
+    @Step("{0} performs the #operator process with the values #valueOne and #valueTwo")
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 TypeNumber.onTheCalculator(valueOne),

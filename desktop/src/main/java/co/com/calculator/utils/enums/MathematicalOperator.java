@@ -9,10 +9,10 @@ import java.util.Arrays;
 @Getter
 public enum MathematicalOperator {
 
-    SYMBOL_DIVISION("División", "Dividir por"),
-    SYMBOL_MINUS("Resta", "Menos"),
-    SYMBOL_MULTIPLICATION("Multiplicación", "Multiplicar por"),
-    SYMBOL_PLUS("Suma", "Más");
+    SYMBOL_DIVISION("Division", "Dividir por"),
+    SYMBOL_MINUS("Subtraction", "Menos"),
+    SYMBOL_MULTIPLICATION("Multiplication", "Multiplicar por"),
+    SYMBOL_PLUS("sum", "Más");
 
     private final String operator;
     private final String value;

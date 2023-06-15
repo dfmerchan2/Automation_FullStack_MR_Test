@@ -22,7 +22,7 @@ public class TypeNumber implements Interaction {
     private final String number;
 
     @Override
-    @Step("{0} digita el numero #number en la calculadora")
+    @Step("{0} type the number #number in the calculator")
     public <T extends Actor> void performAs(T actor) {
         List<String> listNumber = Arrays.stream(number.split("")).toList();
 

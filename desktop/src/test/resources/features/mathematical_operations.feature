@@ -1,26 +1,24 @@
-#language: es
+Feature: Mathematical operations in the Windows calculator
+  I as a user
+  I want to open the calculator
+  To perform basic operations
 
-Característica: Realizar una operaciones matemáticas en la calculadora de Windows
-  Yo como Usuario
-  Quiero abrir la calculadora
-  Para realizar las operaciones básicas
+  Scenario: Successful "Sum" Operation
+    Given that "Diego" opens the calculator application
+    When he performs the "sum" operation with the values "20" and "5"
+    Then he should observe the result equal to "25"
 
-  Escenario: Operación de "Suma" Exitosa
-    Dado que "Diego" abre la aplicación de la calculadora
-    Cuando realiza la operación de "suma" con los valores "20" y "5"
-    Entonces debería de observar el resultado igual a "25"
+  Scenario: Successful "Subtraction" Operation
+    Given that "Diego" opens the calculator application
+    When he performs the "subtraction" operation with the values "10" and "6"
+    Then he should observe the result equal to "4"
 
-  Escenario: Operación de "Resta" Exitosa
-    Dado que "Diego" abre la aplicación de la calculadora
-    Cuando realiza la operación de "resta" con los valores "10" y "6"
-    Entonces debería de observar el resultado igual a "5"
+  Scenario: Successful "Multiplication" Operation
+    Given that "Diego" opens the calculator application
+    When he performs the "multiplication" operation with the values "10" and "6"
+    Then he should observe the result equal to "60"
 
-  Escenario: Operación de "Multiplicación" Exitosa
-    Dado que "Diego" abre la aplicación de la calculadora
-    Cuando realiza la operación de "multiplicación" con los valores "10" y "6"
-    Entonces debería de observar el resultado igual a "60"
-
-  Escenario: Operación de "Division" Exitosa
-    Dado que "Diego" abre la aplicación de la calculadora
-    Cuando realiza la operación de "división" con los valores "100" y "5"
-    Entonces debería de observar el resultado igual a "20"
+  Scenario: Successful "Division" Operation
+    Given that "Diego" opens the calculator application
+    When he performs the "Division" operation with the values "100" and "5"
+    Then he should observe the result equal to "20"
