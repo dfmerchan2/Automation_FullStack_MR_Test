@@ -1,18 +1,75 @@
-plugins {
-    id 'java'
-}
+group 'Automation_FullStack_MR_E2E'
+version '1.0'
+description = 'Serenity BDD project Desktop with Appium,Cucumber, WinAppDriver and ScreemPlay'
 
-version 'unspecified'
+defaultTasks 'clean', 'test', 'aggregate'
+
+buildscript {
+    ext {
+        appiumVersion = '8.3.0'
+        javaFakerVersion = '1.0.2'
+        lombokVersion = '1.18.26'
+        seleniumVersion = '4.8.1'
+        serenityCucumberVersion = '3.6.12'
+        serenityVersion = '3.6.12'
+        slf4jVersion = '2.0.5'
+    }
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "net.serenity-bdd:serenity-gradle-plugin:3.3.0"
+        classpath "org.seleniumhq.selenium:selenium-java:${seleniumVersion}"
+    }
+}
 
 repositories {
     mavenCentral()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: "net.serenity-bdd.serenity-gradle-plugin"
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation "net.serenity-bdd:serenity-core:${serenityVersion}"
+    implementation "net.serenity-bdd:serenity-core:${serenityVersion}"
+    implementation "net.serenity-bdd:serenity-junit:${serenityVersion}"
+    implementation "net.serenity-bdd:serenity-screenplay:${serenityVersion}"
+    implementation "net.serenity-bdd:serenity-cucumber:${serenityCucumberVersion}"
+    implementation "net.serenity-bdd:serenity-rest-assured:${serenityVersion}"
+    implementation "net.serenity-bdd:serenity-ensure:${serenityVersion}"
+    implementation "io.appium:java-client:${appiumVersion}"
+    implementation "com.github.javafaker:javafaker:${javaFakerVersion}"
+    implementation "org.seleniumhq.selenium:selenium-java:${seleniumVersion}"
+    testImplementation "org.slf4j:slf4j-simple:${slf4jVersion}"
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
 }
 
-test {
-    useJUnitPlatform()
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
 }
+
+gradle.startParameter.continueOnFailure = true
+
+tasks.withType(Test) {
+    testLogging.showStandardStreams = true
+    systemProperties = System.properties
+    maxParallelForks = Runtime.runtime.availableProcessors()
+}
+
+test.finalizedBy(reports, aggregate)
