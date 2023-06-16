@@ -3,4 +3,5 @@ include 'web'
 include 'services'
 include 'mobile'
 include 'desktop'
+include 'seleniumGrid'
 

@@ -24,12 +24,25 @@
 * Gradle
 
 ## Automatización Servicios Rest
-#### En Proceso
+
+### RestFul-Booker
+
+Se realizo la automatización del flujo de autenticación y reservas con escenarios Happy Paths y UnHappy Paths. Mediante
+el consumo de diferentes servicios Rest de la aplicación [RestFul-Booker](https://restful-booker.herokuapp.com/apidoc/index.html) tales como
+
+* POST / [Auth - CreateToken](https://restful-booker.herokuapp.com/auth)
+* GET / [Booking - GetBookingIds](https://restful-booker.herokuapp.com/booking)
+* GET / [Booking - GetBooking](https://restful-booker.herokuapp.com/booking/2)
+* POST / [Booking - CreateBooking](https://restful-booker.herokuapp.com/booking)
+* DELETE / [Booking - DeleteBooking](https://restful-booker.herokuapp.com/booking/7)
+* GET / [Ping - HealthCheck](https://restful-booker.herokuapp.com/ping)
 
 ## Automatización Web
+
 #### En Proceso
 
 ## Automatización Mobile
+
 #### En Proceso
 
 ## Automatización Desktop
@@ -54,7 +67,9 @@
 * Utilice **inspect.exe** para inspeccionar los elementos de la aplicación, la cual se encuentra en la
   ruta `C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x64` (ruta de instalación del SDK de windows 10).
 
-## Author
+## Selenium Grid
+#### En Proceso
+## Autor 🤖
 
 * Diego Fernando Merchan Jimenez
     

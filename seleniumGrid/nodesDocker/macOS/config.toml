@@ -1,0 +1,9 @@
+[docker]
+configs = [
+        "selenium/standalone-chrome", "{\"browserName\": \"chrome\", \"platformName\": \"macOS\", \"browserVersion\": \"100\"}",
+        "selenium/standalone-edge", "{\"browserName\": \"MicrosoftEdge\", \"platformName\": \"macOS\", \"browserVersion\": \"101\"}",
+        "selenium/standalone-firefox", "{\"browserName\": \"firefox\", \"platformName\": \"macOS\", \"browserVersion\": \"91\"}",
+        "selenium/standalone-opera", "{\"browserName\": \"opera\", \"platformName\": \"macOS\"}"
+        ]
+url = "http://127.0.0.1:2375"
+video-image = "selenium/video:ffmpeg-4.3.1-20220427"

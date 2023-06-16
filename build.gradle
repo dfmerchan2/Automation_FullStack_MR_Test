@@ -50,6 +50,7 @@ dependencies {
     implementation "net.serenity-bdd:serenity-screenplay:${serenityVersion}"
     implementation "net.serenity-bdd:serenity-cucumber:${serenityCucumberVersion}"
     implementation "net.serenity-bdd:serenity-rest-assured:${serenityVersion}"
+    implementation "net.serenity-bdd:serenity-screenplay-rest:${serenityVersion}"
     implementation "net.serenity-bdd:serenity-ensure:${serenityVersion}"
     implementation "io.appium:java-client:${appiumVersion}"
     implementation "com.github.javafaker:javafaker:${javaFakerVersion}"
