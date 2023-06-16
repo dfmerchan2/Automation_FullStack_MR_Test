@@ -10,6 +10,8 @@
 * WinAppDriver
 * JavaFaker
 * Lombok
+* Selenium Grid
+* Docker
 
 ### Patron De Diseño
 
@@ -27,7 +29,7 @@
 
 ### RestFul-Booker
 
-Se realizo la automatización del flujo de autenticación y reservas con escenarios Happy Paths y UnHappy Paths. Mediante
+Se realizó la automatización del flujo de autenticación y reservas con escenarios Happy Paths y UnHappy Paths. Mediante
 el consumo de diferentes servicios Rest de la aplicación [RestFul-Booker](https://restful-booker.herokuapp.com/apidoc/index.html) tales como
 
 * POST / [Auth - CreateToken](https://restful-booker.herokuapp.com/auth)
@@ -59,7 +61,7 @@ el consumo de diferentes servicios Rest de la aplicación [RestFul-Booker](https
 
 ### Después de Instalar
 
-* Vamos a la ruta donde se instalo el WinAppDriver y ejecutamos *WinAppDriver.exe* (ruta
+* Vamos a la ruta donde se instaló el WinAppDriver y ejecutamos *WinAppDriver.exe* (ruta
   defecto: `C:\Program Files (x86)\Windows Application Driver`)
 
 ![img.png](img.png)
